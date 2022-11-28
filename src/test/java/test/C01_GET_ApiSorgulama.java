@@ -24,7 +24,6 @@ public class C01_GET_ApiSorgulama {
 
         // 2- Expected datayi hazirlamak
 
-
         // 3- Response'u kaydet
 
         Response response= given().when().get(url);
