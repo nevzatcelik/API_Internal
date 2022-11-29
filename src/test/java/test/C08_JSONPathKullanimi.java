@@ -57,6 +57,8 @@ public class C08_JSONPathKullanimi {
                 getJSONArray("phoneNumbers").
                 getJSONObject(0).
                 get("number"));
+
+        System.out.println("Telefon Type : "+ kisiBilgisi.getJSONArray("phoneNumbers").getJSONObject(1).get("type"));
         /*
         {
         "firstName":"John",

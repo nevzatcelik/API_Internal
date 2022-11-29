@@ -20,7 +20,7 @@ public class C01_GET_ApiSorgulama {
     public void get01(){
         // 1- Request icin Url ve Body hazirla
 
-        String url="https://restful-booker.herokuapp.com/booking/263966";
+        String url="https://restful-booker.herokuapp.com/booking/7447";
 
         // 2- Expected datayi hazirlamak
 
