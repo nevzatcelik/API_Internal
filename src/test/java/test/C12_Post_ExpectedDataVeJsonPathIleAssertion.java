@@ -98,8 +98,8 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         assertEquals(expBody.getJSONObject("booking").get("totalprice"),resJS.get("booking.totalprice"));
         assertEquals(expBody.getJSONObject("booking").get("depositpaid"),resJS.get("booking.depositpaid"));
         assertEquals(expBody.getJSONObject("booking").get("additionalneeds"),resJS.get("booking.additionalneeds"));
-        assertEquals(expBody.getJSONObject("booking").get("checkin"),resJS.get("booking.bookingdates.checkin"));
-        assertEquals(expBody.getJSONObject("booking").get("checkout"),resJS.get("booking.bookingdates.checkout"));
+        assertEquals(expBody.getJSONObject("booking").getJSONObject("bookingdates").get("checkin"),resJS.get("booking.bookingdates.checkin"));
+        assertEquals(expBody.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"),resJS.get("booking.bookingdates.checkout"));
 
 
     }
