@@ -82,6 +82,8 @@ public class C16_BaseUrlHerokuapp extends HerokuAppBaseUrl {
       */
         // 1 - URL ve body hazirla
         specHerokuPlace.pathParam("pp1","booking");
+
+
         JSONObject innerBody = new JSONObject();
         JSONObject reqBody = new JSONObject();
         innerBody.put("checkin","2021-06-01");
