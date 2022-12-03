@@ -2,6 +2,7 @@ package test;
 
 import baseUrl.HerokuAppBaseUrl;
 import io.restassured.response.Response;
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
@@ -66,5 +67,28 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseUrl {
 
         response.then().assertThat().statusCode(200).body("bookingid",Matchers.hasSize(2));
 
+    }
+
+    @Test
+    public void test03(){
+        /*
+            3- https://restful-booker.herokuapp.com/booking endpointine gerekli Query
+     parametrelerini yazarak "firstname" degeri "Jim" ve "lastname" degeri
+     "Jackson" olan rezervasyon oldugunu test edecek bir GET request gonderdigimizde,
+     donen response'un status code'unun 200 oldugunu ve "Jim Jackson" ismine sahip
+     en az bir booking oldugunu test edin
+         */
+       // 1 request olusturma
+        specHerokuPlace.pathParam("pp1","booking").queryParams("firstname","Jim","lastname","Jackson");
+       // 2 expected body hazirlama
+
+        // 3 response u kaydetme
+        Response response=given().spec(specHerokuPlace).when().get("/{pp1}");
+        response.prettyPrint();
+        //4 assertion yap
+        response.then().assertThat().statusCode(200).body(Matchers.
+                equalTo("[\n" +
+                        "    \n" +
+                        "]"));
     }
 }
